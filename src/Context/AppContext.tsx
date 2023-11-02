@@ -14,7 +14,7 @@ export function AppContextProvider({ children }: any) {
     const [pokemones, setPokemones] = useState<Pokemon[]>([])
 
     const poke = async () => {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=5&offset=0`)
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=6&offset=0`)
         const data = await res.json();
 
         const { results } = data
@@ -23,15 +23,12 @@ export function AppContextProvider({ children }: any) {
             const response = await fetch(pokemon.url)
             const poke = await response.json()
 
-            const tipos = poke.types
-
             return {
                 id: poke.id,
                 name: poke.name,
                 img: poke.sprites.front_default,
                 peso: poke.weight,
                 tipoUno: poke.types[0].type.name,
-                tipos
             }
         })
         setPokemones(await Promise.all(newPokemons))

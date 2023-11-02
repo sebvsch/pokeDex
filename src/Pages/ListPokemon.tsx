@@ -6,7 +6,7 @@ const ListPokemon: FC = () => {
     const { pokemones } = useContext(AppContext)
 
     return (
-        <div>
+        <div className='flex flex-wrap justify-center mt-8 gap-8'>
             {pokemones.map((pokemon, id) => (<CardPokemon key={id} pokemon={pokemon} />
             ))}
         </div>
