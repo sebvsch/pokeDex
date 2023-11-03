@@ -12,11 +12,15 @@ const CardPokemon: FC<CardPokemonProps> = ({ pokemon }) => {
             <div className=''>
                 <img className='w-36' src={pokemon.img} alt={pokemon.name} />
             </div>
-            <div className='font-bold text-white text-2xl bg-zinc-500 rounded-2xl'>
+            <div className='font-bold text-white text-2xl bg-[#646464] rounded-2xl'>
                 <h1 className='py-1 px-5'>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
             </div>
             <div className='flex gap-3 font-semibold'>
-                <h2 className='text-xs text-white mt-2 bg-[#DE1036] py-1 px-4 rounded-md'>{pokemon.tipoUno.toLocaleUpperCase()}</h2>
+                {pokemon.tipos.map((tipo, id) => (
+                    <h2 key={id} className='text-xs text-white mt-2 bg-[#DE1036] py-1 px-4 rounded-md'>
+                        {tipo.toUpperCase()}
+                    </h2>
+                ))}
             </div>
         </div>
     )

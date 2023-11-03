@@ -4,5 +4,5 @@ export interface Pokemon {
     url: string;
     img: string
     peso: number;
-    tipoUno: string
+    tipos: Array<string>
 }
