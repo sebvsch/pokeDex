@@ -6,6 +6,10 @@ type AppContextType = {
     filtrar: Pokemon[]
     buscarPokemon: (e: React.ChangeEvent<HTMLInputElement>) => void
     buscar: string
+    pokemonPorPagina: number
+    setPokemonPorPagina: React.Dispatch<React.SetStateAction<number>>
+    paginaActual: number
+    setPaginaActual: React.Dispatch<React.SetStateAction<number>>
 }
 
 export const AppContext = createContext<AppContextType>(
@@ -16,9 +20,11 @@ export function AppContextProvider({ children }: any) {
 
     const [pokemones, setPokemones] = useState<Pokemon[]>([]);
     const [buscar, setBuscar] = useState<string>("");
+    const [pokemonPorPagina, setPokemonPorPagina] = useState<number>(6)
+    const [paginaActual, setPaginaActual] = useState<number>(1)
 
     const poke = async () => {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`)
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=9&offset=0`)
         const data = await res.json();
 
         const { results } = data
@@ -59,6 +65,10 @@ export function AppContextProvider({ children }: any) {
             filtrar,
             buscarPokemon,
             buscar,
+            pokemonPorPagina,
+            setPokemonPorPagina,
+            paginaActual,
+            setPaginaActual
         }}>
             {children}
         </AppContext.Provider>

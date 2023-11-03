@@ -5,6 +5,7 @@ import { NavBar } from './Components/NavBar'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Home } from './Pages/Home'
 import { Acerca } from './Pages/Acerca'
+import { Footer } from './Components/Footer'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/acerca" element={<Acerca />} />
         <Route path='/*' element={<Navigate to='/'/> } />
       </Routes>
+      <Footer />
     </AppContextProvider>
 
   )

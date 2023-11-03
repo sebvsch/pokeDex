@@ -3,7 +3,7 @@ import React, { FC } from "react";
 const Home: FC = () => {
     return (
         <>
-            <div className="text-gray-600">
+            <div className="animacion text-gray-600 mt-auto">
                 <div>
                     <img src="" alt="" />
                 </div>
