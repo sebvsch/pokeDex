@@ -5,7 +5,7 @@ const Footer: FC = () => {
     return (
         <>
 
-            <footer className="bg-gray-200 border-t-2}">
+            <footer className="bg-gray-200 border-t border-gray-300">
                 <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                     <div className="md:flex md:justify-between">
                         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -13,13 +13,13 @@ const Footer: FC = () => {
                                 <h2 className="mb-2 text-sm font-semibold text-[#DE1036]">CONTACTO</h2>
                                 <ul className="text-gray-500 dark:text-gray-400 font-normal text-sm">
                                     <li className="mb-4">
-                                        <a href="https://github.com/sebvsch" target='_blank' className="flex items-center hover:text-[#DE1036] ease-in duration-200 "> Github</a>
+                                        <Link to="https://github.com/sebvsch" target='_blank' className="flex items-center hover:text-[#DE1036] ease-in duration-200 "> Github</Link>
                                     </li>
                                     <li className="mb-4">
-                                        <a href="https://www.linkedin.com/in/sebastian-chico-80802625b/" target='_blank' className="flex items-center hover:text-[#DE1036] ease-in duration-200 ">LinkedIn</a>
+                                        <Link to="https://www.linkedin.com/in/sebastian-chico-80802625b/" target='_blank' className="flex items-center hover:text-[#DE1036] ease-in duration-200 ">LinkedIn</Link>
                                     </li>
                                     <li>
-                                        <a href="" className="hover:text-[#DE1036] ease-in duration-200">Discord</a>
+                                        <Link to="/pokedex" className="hover:text-[#DE1036] ease-in duration-200">Discord</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -54,7 +54,11 @@ const Footer: FC = () => {
                         </div>
                     </div>
                 </div>
-    
+                <div className="flex justify-center items-center gap-1 bg-[#DE1036] py-1 text-white">
+                    <p className='text-xs'>Copyright</p>
+                    <span className="material-symbols-outlined text-xs ">copyright</span>
+                    <p className='text-xs'>{new Date().getFullYear()}</p>
+                </div>
             </footer>
 
         </>
