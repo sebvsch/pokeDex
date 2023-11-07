@@ -1,6 +1,6 @@
 // Definición de los colores para los tipos de Pokemon
 const tiposPorColor = {
-    normal: 'bg-gray-300',
+    normal: 'bg-gray-400',
     fighting: 'bg-red-600',
     flying: 'bg-blue-300',
     poison: 'bg-purple-400',

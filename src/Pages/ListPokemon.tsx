@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import { AppContext } from '../Context/AppContext';
 import { CardPokemon } from '../Components/CardPokemon';
 import { Paginacion } from '../Components/Paginacion';
@@ -10,7 +10,10 @@ const ListPokemon: FC = () => {
     const [pagina, setPagina] = useState<number>(1)
     const [porPagina, setPorPagina] = useState<number>(15)
 
-    const maximo = Math.ceil(pokemones.length / porPagina)
+
+    const handlePageChange = (selectedPage: number) => {
+        setPagina(selectedPage);
+    };
 
     return (
         <>
@@ -45,11 +48,13 @@ const ListPokemon: FC = () => {
 
 
                 <div className='flex justify-center mt-20'>
-                    <Paginacion pagina={pagina} setPagina={setPagina} maximo={maximo} />
+                    <Paginacion pagina={pagina} onPageChange={handlePageChange} totalPages={Math.ceil(filtrar.length / porPagina)} />
                 </div>
             </div>
+
         </>
     )
+
 }
 
 export { ListPokemon }
