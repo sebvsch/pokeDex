@@ -10,7 +10,6 @@ const ListPokemon: FC = () => {
     const [pagina, setPagina] = useState<number>(1)
     const [porPagina, setPorPagina] = useState<number>(15)
 
-
     const handlePageChange = (selectedPage: number) => {
         setPagina(selectedPage);
     };
@@ -47,7 +46,7 @@ const ListPokemon: FC = () => {
                 </div>
 
 
-                <div className='flex justify-center mt-20'>
+                <div className='flex justify-center mt-10'>
                     <Paginacion pagina={pagina} onPageChange={handlePageChange} totalPages={Math.ceil(filtrar.length / porPagina)} />
                 </div>
             </div>

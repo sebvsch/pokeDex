@@ -6,7 +6,11 @@ type CardPokemonProps = {
     pokemon: Pokemon;
 }
 
+
+
 const CardPokemon: FC<CardPokemonProps> = ({ pokemon }) => {
+
+
     return (
         <div className=" bg-gray-200 w-64 h-64 rounded-3xl flex flex-col justify-center items-center border border-gray-300" /*style={{ boxShadow: "rgba(60, 64, 67, 0.30) 0px 1px 2px 0px, rgba(60, 64, 67, 0.10) 0px 2px 6px 2px" }}*/>
             <h2 className='text-xs font-bold text-white bg-blue-500 rounded-full p-1'>#{pokemon.id}</h2>

@@ -19,7 +19,7 @@ function App() {
         <Route path="/acerca" element={<Acerca />} />
         <Route path='/*' element={<Navigate to='/'/> } />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </AppContextProvider>
 
   )
